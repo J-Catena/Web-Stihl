@@ -1,0 +1,32 @@
+/* Ajuste para dar espacio entre navbar fixed y el hero */
+.hero {
+    margin-top: 80px;
+    /* Altura de navbar */
+}
+
+/* Enlaces navbar personalizados */
+.navbar .nav-link {
+    font-weight: 500;
+    margin-left: 1rem;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #f37021;
+    /* Color anaranjado similar a STIHL */
+}
+
+.button-form{
+    border-radius: 40px;
+    border-color: #f37021;
+    color: #f37021;
+    background-color: white;
+
+}
+
+.button-form:hover{
+    background-color: #f37021;
+    color: white;
+    border-color: white;
+}
