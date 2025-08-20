@@ -17,7 +17,7 @@
     /* Color anaranjado similar a STIHL */
 }
 
-.button-form{
+.button-form {
     border-radius: 40px;
     border-color: #f37021;
     color: #f37021;
@@ -25,8 +25,53 @@
 
 }
 
-.button-form:hover{
+.button-form:hover {
     background-color: #f37021;
     color: white;
     border-color: white;
+}
+
+.titulo-principal {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.titulo-principal span {
+    color: #f37021;
+    /* Color anaranjado similar a STIHL */
+    font-weight: bold;
+}
+
+.presentacion {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+.hero {
+    background: url('img/foto-tienda2.jpeg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+}
+
+.cuadro-texto {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+
+footer {
+    background-color: #111;
 }
