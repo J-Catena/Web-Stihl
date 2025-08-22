@@ -55,49 +55,55 @@
     <!--FORMULARIO DE CONTACTO-->
 
     <!-- Sección de Contacto -->
-   <section id="contacto" class="py-5 bg-light">
-    <div class="container">
-        <div class="row">
-            <!-- Columna izquierda: texto -->
-            <div class="col-md-6 mb-4 mb-md-0">
-                <p class="text-form">¿Tienes alguna pregunta?</p>
-                <h2 class="text-title-form mb-4">Contáctanos</h2>
-                <p>Estaremos encantados de ayudarte con cualquier duda o consulta que tengas.</p>
-            </div>
+    <section id="contacto" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <!-- Columna izquierda: texto -->
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <p class="text-form">¿Tienes alguna pregunta?</p>
+                    <h2 class="text-title-form mb-4">Contáctanos</h2>
+                    <p>Estaremos encantados de ayudarte con cualquier duda o consulta que tengas.</p>
+                </div>
 
-            <!-- Columna derecha: formulario -->
-            <div class="col-md-6">
-                <form>
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required>
-                    </div>
+                <!-- Columna derecha: formulario -->
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required>
+                        </div>
 
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Correo electrónico</label>
-                        <input type="email" class="form-control" id="email" placeholder="tucorreo@ejemplo.com" required>
-                    </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="email" placeholder="tucorreo@ejemplo.com"
+                                required>
+                        </div>
 
-                    <div class="mb-3">
-                        <label for="consulta" class="form-label">Consulta</label>
-                        <textarea class="form-control" id="consulta" rows="5" placeholder="Escribe tu mensaje aquí"
-                            required></textarea>
-                    </div>
+                        <div class="mb-3">
+                            <label for="consulta" class="form-label">Consulta</label>
+                            <textarea class="form-control" id="consulta" rows="5" placeholder="Escribe tu mensaje aquí"
+                                required></textarea>
+                        </div>
 
-                    <div class="text-end">
-                        <button type="submit" class="button-form btn btn-primary">Enviar</button>
-                    </div>
-                </form>
+                        <div class="text-end">
+                            <button type="submit" class="button-form btn btn-primary">Enviar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-4">
-        <p class="mb-0">&copy; <span id="year"></span> Tienda STIHL. Todos los derechos reservados.</p>
+    <footer class="bg-dark text-white text-center py-4 justify-content-between">
+        <p class="mb-2">&copy; <span id="year"></span> Tienda STIHL. Todos los derechos reservados.</p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap small">
+            <a href="cookies.html" class="text-white text-decoration-none">Política de Cookies</a>
+            <a href="aviso-legal.html" class="text-white text-decoration-none">Aviso Legal</a>
+            <a href="proteccion-datos.html" class="text-white text-decoration-none">Protección de Datos</a>
+        </div>
     </footer>
 
     <!-- Scripts -->
