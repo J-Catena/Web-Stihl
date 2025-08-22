@@ -43,6 +43,12 @@
     font-weight: bold;
 }
 
+.text-title-form span{
+    color: #f37021;
+    /* Color anaranjado similar a STIHL */
+    font-weight: bold;
+}
+
 .presentacion {
     font-size: 1.2rem;
     color: #666;
@@ -89,4 +95,48 @@
 
 footer {
     background-color: #111;
+}
+
+
+/* General */
+#contacto {
+    background: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text-form {
+    font-size: 1.1rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.text-title-form {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #343a40;
+}
+
+/* Inputs */
+form .form-control {
+    border-radius: 0.5rem;
+    border: 1px solid #ced4da;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form .form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .text-title-form {
+        font-size: 2rem;
+    }
+
+    .text-form {
+        font-size: 1rem;
+    }
 }
