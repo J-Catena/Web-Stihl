@@ -1,7 +1,10 @@
 /* Ajuste para dar espacio entre navbar fixed y el hero */
 .hero {
     margin-top: 80px;
-    /* Altura de navbar */
+    background: url('img/foto-tienda2.jpeg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    color: white;
 }
 
 /* Enlaces navbar personalizados */
@@ -43,7 +46,7 @@
     font-weight: bold;
 }
 
-.text-title-form span{
+.text-title-form span {
     color: #f37021;
     /* Color anaranjado similar a STIHL */
     font-weight: bold;
@@ -53,13 +56,6 @@
     font-size: 1.2rem;
     color: #666;
     margin-top: 10px;
-}
-
-.hero {
-    background: url('img/foto-tienda2.jpeg') no-repeat center center;
-    background-size: cover;
-    height: 100vh;
-    color: white;
 }
 
 .cuadro-texto {
@@ -139,4 +135,18 @@ form .form-control:focus {
     .text-form {
         font-size: 1rem;
     }
+}
+
+.titulo-productos {
+    background-color: #f8f9fa;
+    border-radius: 50px;
+    padding: 10px;
+    border: solid 2px #f37021;
+}
+
+.titulo-servicios {
+    background-color: #e1e1e1;
+    border-radius: 50px;
+    padding: 10px;
+    border: solid 2px #f37021;
 }
