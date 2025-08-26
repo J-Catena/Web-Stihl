@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,12 +6,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tienda STIHL</title>
-    <link rel="icon" href="//assets/img/favicon.ico" type="image/x-icon">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//assets/styles.css">
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-
 </head>
 
 <body>
@@ -24,15 +31,12 @@
         </div>
     </header>
 
-
-
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container">
             <!-- Logo -->
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="/assets/img/logo stihl-fondo-naranja.jpg" alt="STIHL Logo" width="120" class="me-2">
+            <a class="navbar-brand d-flex align-items-center" href="{% url 'index' %}">
+                <img src="{% static 'img/logo stihl-fondo-naranja.jpg' %}" alt="STIHL Logo" width="120" class="me-2">
             </a>
 
             <!-- Botón hamburguesa -->
@@ -45,24 +49,21 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Inicio</a>
+                        <a class="nav-link" href="{% url 'index' %}">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contacto.html">Contacto</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'contacto' %}">Contacto</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!--FORMULARIO DE CONTACTO-->
-
     <!-- Sección de Contacto -->
-    <section id="contacto" class="py-5 bg-light">
+    <section id="contacto" class="py-5 bg-light" style="margin-top: 80px;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <!-- Texto de introducción -->
                     <p class="text-form">¿Tienes alguna pregunta?</p>
                     <h2 class="text-title-form mb-4">
                         <i class="fas fa-envelope"></i> Ponte en <span>contacto</span> con nosotros
@@ -83,8 +84,8 @@
 
                         <div class="mb-3 text-start">
                             <label for="consulta" class="form-label">Consulta</label>
-                            <textarea class="form-control" id="consulta" rows="5" placeholder="¿En qué podemos ayudarte?"
-                                required></textarea>
+                            <textarea class="form-control" id="consulta" rows="5"
+                                placeholder="¿En qué podemos ayudarte?" required></textarea>
                         </div>
 
                         <div class="text-end">
@@ -95,9 +96,6 @@
             </div>
         </div>
     </section>
-
-
-
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4 justify-content-between">
@@ -112,7 +110,12 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="/assets/main.js"></script>
+    <script src="{% static 'main.js' %}"></script>
+
+    <script>
+        // Actualizar año en el footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
