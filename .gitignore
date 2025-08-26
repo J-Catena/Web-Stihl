@@ -1,0 +1,32 @@
+# Archivos Python compilados
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Entornos virtuales
+env/
+venv/
+
+# Archivos de base de datos
+*.sqlite3
+*.db
+
+# Archivos de configuración local
+*.env
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de log
+*.log
+
+# Archivos estáticos (si se generan automáticamente)
+staticfiles/
+static/
+
+# Archivos de media (si se generan automáticamente)
+media/
+
+# Node (si usas npm o frontend tooling)
+node_modules/
