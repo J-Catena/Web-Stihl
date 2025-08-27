@@ -56,40 +56,97 @@
     <section id="productos" class="py-5" style="background-color: #e1e1e1;">
         <div class="container">
             <h2 class="titulo-productos text-center mb-4">Productos Destacados</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                    <div class="card h-100 text-center shadow-sm">
-                        <img src="{% static 'img/motor-stihl-combi-km-131-r.jpg' %}" class="card-img-producto"
+
+            <!-- Versión escritorio: 3 columnas -->
+            <div class="row g-4 d-none d-lg-flex">
+                <div class="col-md-4">
+                    <div class="text-center h-100 border rounded shadow-sm bg-white">
+                        <img src="{% static 'img/motor-stihl-combi-km-131-r.jpg' %}" class="card-img-producto mb-3"
                             alt="Motor combinado STIHL">
-                        <div class="card-body d-flex flex-column justify-content-end">
-                            <h5 class="card-title">Motor combinado KM 131</h5>
-                            <p class="card-text">Ligera y eficiente, ideal para jardinería doméstica.</p>
-                        </div>
+                        <h5>Motores Combinados</h5>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100 text-center shadow-sm">
-                        <img src="{% static 'img/motosierra-stihl-ms170.jpg' %}" class="card-img-producto"
+                <div class="col-md-4">
+                    <div class="text-center h-100 border rounded shadow-sm bg-white">
+                        <img src="{% static 'img/motosierra-stihl-ms170.jpg' %}" class="card-img-producto mb-3"
                             alt="Motosierra STIHL">
-                        <div class="card-body d-flex flex-column justify-content-end">
-                            <h5 class="card-title">Motosierra MS 170</h5>
-                            <p class="card-text">Ligera y eficiente, ideal para jardinería doméstica.</p>
-                        </div>
+                        <h5>Motosierras</h5>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100 text-center shadow-sm">
-                        <img src="{% static 'img/STIHL-RM-248-T-1.jpg' %}" class="card-img-producto"
+                <div class="col-md-4">
+                    <div class="text-center h-100 border rounded shadow-sm bg-white">
+                        <img src="{% static 'img/STIHL-RM-248-T-1.jpg' %}" class="card-img-producto mb-3"
                             alt="Cortacésped STIHL">
-                        <div class="card-body d-flex flex-column justify-content-end">
-                            <h5 class="card-title">Cortacésped RM 248 T</h5>
-                            <p class="card-text">Ligera y eficiente, ideal para jardinería doméstica.</p>
-                        </div>
+                        <h5>Máquinas Cortacésped</h5>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center h-100 border rounded shadow-sm bg-white">
+                        <img src="{% static 'img/soplador_stihl.jpg' %}" class="card-img-producto mb-3"
+                            alt="Sopladores STIHL">
+                        <h5>Sopladores</h5>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center h-100 border rounded shadow-sm bg-white">
+                        <img src="{% static 'img/Desbrozadoras_stihl.jpg' %}" class="card-img-producto mb-3"
+                            alt="Desbrozadoras STIHL">
+                        <h5>Desbrozadoras</h5>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center h-100 border rounded shadow-sm bg-white">
+                        <img src="{% static 'img/motoazadas-stihl-mh-600.jpg' %}" class="card-img-producto mb-3"
+                            alt="Motoazadas STIHL">
+                        <h5>Motoazadas</h5>
                     </div>
                 </div>
             </div>
+
+            <!-- Versión móvil: carousel -->
+            <!-- Versión móvil: carousel -->
+            <div id="productosCarousel" class="carousel slide d-lg-none" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="text-center h-100 border rounded shadow-sm bg-white p-3">
+                            <img src="{% static 'img/motor-stihl-combi-km-131-r.jpg' %}" class="card-img-producto mb-3"
+                                alt="Motor combinado STIHL">
+                            <h5>Motores Combinados</h5>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="text-center h-100 border rounded shadow-sm bg-white p-3">
+                            <img src="{% static 'img/motosierra-stihl-ms170.jpg' %}" class="card-img-producto mb-3"
+                                alt="Motosierra STIHL">
+                            <h5>Motosierras</h5>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="text-center h-100 border rounded shadow-sm bg-white p-3">
+                            <img src="{% static 'img/STIHL-RM-248-T-1.jpg' %}" class="card-img-producto mb-3"
+                                alt="Cortacésped STIHL">
+                            <h5>Máquinas Cortacésped</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solo los 3 puntos indicadores -->
+                <div class="carousel-indicators mt-3">
+                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Producto 1"></button>
+                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="1"
+                        aria-label="Producto 2"></button>
+                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="2"
+                        aria-label="Producto 3"></button>
+                </div>
+            </div>
+
         </div>
     </section>
+
+
 
     <!-- SECCIÓN SERVICIOS -->
     <section id="servicios" class="py-5">
