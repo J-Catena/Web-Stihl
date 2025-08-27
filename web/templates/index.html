@@ -53,6 +53,7 @@
     </nav>
 
     <!-- SECCIÓN PRODUCTOS -->
+    <!-- SECCIÓN PRODUCTOS -->
     <section id="productos" class="py-5" style="background-color: #e1e1e1;">
         <div class="container">
             <h2 class="titulo-productos text-center mb-4">Productos Destacados</h2>
@@ -104,9 +105,9 @@
             </div>
 
             <!-- Versión móvil: carousel -->
-            <!-- Versión móvil: carousel -->
             <div id="productosCarousel" class="carousel slide d-lg-none" data-bs-ride="carousel">
                 <div class="carousel-inner">
+
                     <div class="carousel-item active">
                         <div class="text-center h-100 border rounded shadow-sm bg-white p-3">
                             <img src="{% static 'img/motor-stihl-combi-km-131-r.jpg' %}" class="card-img-producto mb-3"
@@ -130,9 +131,34 @@
                             <h5>Máquinas Cortacésped</h5>
                         </div>
                     </div>
+
+                    <div class="carousel-item">
+                        <div class="text-center h-100 border rounded shadow-sm bg-white p-3">
+                            <img src="{% static 'img/soplador_stihl.jpg' %}" class="card-img-producto mb-3"
+                                alt="Sopladores STIHL">
+                            <h5>Sopladores</h5>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="text-center h-100 border rounded shadow-sm bg-white p-3">
+                            <img src="{% static 'img/Desbrozadoras_stihl.jpg' %}" class="card-img-producto mb-3"
+                                alt="Desbrozadoras STIHL">
+                            <h5>Desbrozadoras</h5>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="text-center h-100 border rounded shadow-sm bg-white p-3">
+                            <img src="{% static 'img/motoazadas-stihl-mh-600.jpg' %}" class="card-img-producto mb-3"
+                                alt="Motoazadas STIHL">
+                            <h5>Motoazadas</h5>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- Solo los 3 puntos indicadores -->
+                <!-- Indicadores para 6 productos -->
                 <div class="carousel-indicators mt-3">
                     <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="0" class="active"
                         aria-current="true" aria-label="Producto 1"></button>
@@ -140,11 +166,17 @@
                         aria-label="Producto 2"></button>
                     <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="2"
                         aria-label="Producto 3"></button>
+                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="3"
+                        aria-label="Producto 4"></button>
+                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="4"
+                        aria-label="Producto 5"></button>
+                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="5"
+                        aria-label="Producto 6"></button>
                 </div>
             </div>
-
         </div>
     </section>
+
 
 
 
