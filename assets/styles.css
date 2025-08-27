@@ -157,27 +157,33 @@ form .form-control:focus {
 
 .carousel-indicators {
     position: absolute;
-    right: 0;
     bottom: -50px;
-    left: 0;
+    left: 15%;
+    right: 15%;
     z-index: 2;
     display: flex;
     justify-content: center;
     padding: 0;
-    margin-right: 15%;
     margin-bottom: 1rem;
-    margin-left: 15%;
 }
 
 .carousel-indicators button {
-    width: 12px;
-    height: 12px;
+    width: 12px !important;
+    height: 12px !important;
     border-radius: 50%;
-    background-color: #fff;
     border: none;
+    background-color: gray !important;
     opacity: 0.5;
-    transition: opacity 0.3s;
     margin: 0 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    padding: 0;
+    text-indent: -999px;
+    background-clip: padding-box;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
 }
 
 .carousel-indicators button.active {
@@ -185,31 +191,13 @@ form .form-control:focus {
     background-color: #000;
 }
 
-.carousel-indicators [data-bs-target] {
-    box-sizing: content-box;
-    flex: 0 1 auto;
-    width: 12px;
-    height: 12px;
-    padding: 0;
-    margin-right: 3px;
-    margin-left: 3px;
-    text-indent: -999px;
-    cursor: pointer;
-    background-color: gray;
-    background-clip: padding-box;
-    border: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    opacity: .5;
-    transition: opacity .6s ease;
-}
 
 .acceso-politica {
-   text-decoration: none;
-   color: #fff;
+    text-decoration: none;
+    color: #fff;
 }
 
 .acceso-politica:hover {
-   text-decoration: underline;
-   color: #f37021;
-}   
+    text-decoration: underline;
+    color: #f37021;
+}
