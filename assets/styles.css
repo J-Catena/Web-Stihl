@@ -151,3 +151,65 @@ form .form-control:focus {
     border: solid 2px #f37021;
 }
 
+.mapa-ubicacion {
+    background-color: #e1e1e1;
+}
+
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-right: 15%;
+    margin-bottom: 1rem;
+    margin-left: 15%;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: none;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    margin: 0 5px;
+}
+
+.carousel-indicators button.active {
+    opacity: 1;
+    background-color: #000;
+}
+
+.carousel-indicators [data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: gray;
+    background-clip: padding-box;
+    border: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease;
+}
+
+.acceso-politica {
+   text-decoration: none;
+   color: #fff;
+}
+
+.acceso-politica:hover {
+   text-decoration: underline;
+   color: #f37021;
+}   
