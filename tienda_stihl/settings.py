@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-jw5t(x5%cce8&j2j2af-irogwaq&)3m6w)(za802i4&-3fwhpd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'jcatena.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'jcatena.pythonanywhere.com']
 
 
 
