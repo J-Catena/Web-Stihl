@@ -122,7 +122,18 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'assets'),  # carpeta donde tienes tu CSS/JS en desarrollo
+    os.path.join(BASE_DIR, 'assets'),  # carpeta donde esta CSS/JS en desarrollo
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # carpeta donde se juntan los archivos en producción
+
+
+# settings.py
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'tiendastihlcabopino@gmail.com'  
+EMAIL_HOST_PASSWORD = 'TU_APP_PASSWORD'           
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

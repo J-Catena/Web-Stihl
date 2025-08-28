@@ -14,36 +14,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// Función para habilitar drag con el ratón
-function enableMouseDragCarousel(carouselId) {
-    const carousel = document.querySelector(carouselId);
-    if (!carousel) return;
+// Función para habilitar drag con el ratón, recibe el elemento y la instancia del carrusel
+function enableMouseDragCarousel(carouselElement, carouselInstance) {
+    if (!carouselElement || !carouselInstance) return;
 
     let isDragging = false;
     let startX = 0;
 
-    carousel.addEventListener("mousedown", (e) => {
+    carouselElement.addEventListener("mousedown", (e) => {
         isDragging = true;
         startX = e.clientX;
     });
 
-    carousel.addEventListener("mouseup", (e) => {
+    carouselElement.addEventListener("mouseup", (e) => {
         if (!isDragging) return;
         const endX = e.clientX;
         const diff = startX - endX;
 
         if (Math.abs(diff) > 50) {
             if (diff > 0) {
-                bootstrap.Carousel.getInstance(carousel)?.next();
+                carouselInstance.next();
             } else {
-                bootstrap.Carousel.getInstance(carousel)?.prev();
+                carouselInstance.prev();
             }
         }
         isDragging = false;
     });
 
+    carouselElement.addEventListener("mouseleave", () => {
+        // Cancela drag si el ratón sale del carrusel
+        isDragging = false;
+    });
+
     // Evita selección de texto al arrastrar
-    carousel.addEventListener("mousemove", (e) => {
+    carouselElement.addEventListener("mousemove", (e) => {
         if (isDragging) e.preventDefault();
     });
 
@@ -54,12 +58,21 @@ function enableMouseDragCarousel(carouselId) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Activa swipe táctil automáticamente con Bootstrap
-    new bootstrap.Carousel('#productosCarousel', { touch: true });
-    new bootstrap.Carousel('#serviciosCarousel', { touch: true });
+    // Crea instancias y guarda referencias, desactivando autoplay con interval: false
+    const productosCarousel = new bootstrap.Carousel('#productosCarousel', { touch: true, interval: false });
+    const serviciosCarousel = new bootstrap.Carousel('#serviciosCarousel', { touch: true, interval: false });
 
-    // Añade soporte drag con ratón
-    enableMouseDragCarousel('#productosCarousel');
-    enableMouseDragCarousel('#serviciosCarousel');
+    // Añade soporte drag con ratón pasando elemento e instancia
+    enableMouseDragCarousel(document.querySelector('#productosCarousel'), productosCarousel);
+    enableMouseDragCarousel(document.querySelector('#serviciosCarousel'), serviciosCarousel);
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const yearSpan = document.getElementById("currentYear");
+
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
 });
 
