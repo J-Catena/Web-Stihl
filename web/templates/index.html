@@ -32,15 +32,24 @@
                 <img src="{% static 'img/logo stihl-fondo-naranja.jpg' %}" alt="STIHL Logo" width="120" class="me-2">
             </a>
 
-            <!-- Botón hamburguesa -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <!-- Botón hamburguesa personalizado -->
+            <button class="navbar-toggler svg-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <svg width="40" height="40" viewBox="0 0 100 100">
+                    <path class="line top" d="M 20,30 H 80" stroke="#ff7f00" stroke-width="8" stroke-linecap="round" />
+                    <path class="line middle" d="M 20,50 H 80" stroke="#ff7f00" stroke-width="8"
+                        stroke-linecap="round" />
+                    <path class="line bottom" d="M 20,70 H 80" stroke="#ff7f00" stroke-width="8"
+                        stroke-linecap="round" />
+                </svg>
             </button>
 
-            <!-- Enlaces -->
+
+
+            <!-- Enlaces y botón de idioma -->
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav align-items-end">
                     <li class="nav-item">
                         <a class="nav-link active" href="{% url 'index' %}">Inicio</a>
                     </li>
@@ -53,10 +62,22 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
                     </li>
+
+                    <!-- Botón de idioma estilizado -->
+                    <li class="nav-item ms-3">
+                        <a href="#" class="btn-translate">
+                            🌐
+                            <div id="google_translate_element" style="display:inline-block;"></div>
+                        </a>
+                    </li>
                 </ul>
             </div>
+
+            <!-- Tu JS principal -->
+            <script src="{% static 'assets/main.js' %}"></script>
         </div>
     </nav>
+
 
 
     <!-- SECCIÓN PRODUCTOS -->

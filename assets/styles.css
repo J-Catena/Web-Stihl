@@ -201,3 +201,86 @@ form .form-control:focus {
     text-decoration: underline;
     color: #f37021;
 }
+
+.lista-contacto li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.lista-contacto li a:hover {
+    text-decoration: underline;
+    color: #f37021;
+}
+
+.btn-translate {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-translate:hover {
+    background-color: #ff9500;
+    transform: scale(1.1);
+}
+
+/* Oculta el texto "Seleccionar idioma" de Google Translate */
+#google_translate_element .goog-te-menu-value span:first-child {
+    display: none !important;
+}
+
+/* Ajusta padding del contenedor para que quede centrado dentro del botón */
+.btn-translate #google_translate_element {
+    padding-left: 0 !important;
+}
+
+/* Boton menu hamburguesa */
+
+.svg-toggler svg {
+    cursor: pointer;
+}
+
+.svg-toggler .line {
+    transition: all 0.3s ease-in-out;
+    transform-origin: center;
+}
+
+/* Al abrir el menú */
+.navbar-toggler:not(.collapsed) .line.top {
+    transform: translateY(15px) rotate(45deg);
+}
+
+.navbar-toggler:not(.collapsed) .line.middle {
+    opacity: 0;
+}
+
+.navbar-toggler:not(.collapsed) .line.bottom {
+    transform: translateY(-15px) rotate(-45deg);
+}
+
+/* Opcional: efecto hover para resaltar */
+.svg-toggler:hover .line {
+    stroke: #ff9500;
+    /* naranja más brillante */
+}
+
+.svg-toggler {
+    border: none;
+    background: none;
+    padding: 0;
+    outline: none;
+    /* quita el borde de enfoque */
+    box-shadow: none;
+    /* quita cualquier sombra */
+}
+
+.svg-toggler:focus,
+.svg-toggler:active {
+    outline: none;
+    box-shadow: none;
+}

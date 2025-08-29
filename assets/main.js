@@ -104,3 +104,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// Función de inicialización de Google Translate
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+        {
+            pageLanguage: 'es',                  
+            includedLanguages: 'en,fr,de,it',   
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        },
+        'google_translate_element' 
+    );
+}
+
+(function () {
+    var gtScript = document.createElement('script');
+    gtScript.type = 'text/javascript';
+    gtScript.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    document.body.appendChild(gtScript);
+})();

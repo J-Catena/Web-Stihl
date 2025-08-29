@@ -41,9 +41,9 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Enlaces -->
+            <!-- Enlaces y botón de idioma -->
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav align-items-center">
                     <li class="nav-item">
                         <a class="nav-link active" href="{% url 'index' %}">Inicio</a>
                     </li>
@@ -56,8 +56,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
                     </li>
+
+                    <!-- Botón de idioma estilizado -->
+                    <li class="nav-item ms-3">
+                        <a href="#" class="btn-translate">
+                            🌐
+                            <div id="google_translate_element" style="display:inline-block;"></div>
+                        </a>
+                    </li>
                 </ul>
             </div>
+
+            <!-- Tu JS principal -->
+            <script src="{% static 'assets/main.js' %}"></script>
         </div>
     </nav>
 
@@ -73,11 +84,22 @@
                     </h2>
                     <!-- Aquí puedes poner más info o un formulario -->
                     <p class="lead">Estamos aquí para ayudarte. Llámanos, escríbenos o pasa a visitarnos.</p>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-phone-alt me-2 text-orange"></i> +34 952 182 122</li>
-                        <li><i class="fas fa-mobile-alt me-2 text-orange"></i> +34 616 492 121</li>
-                        <li><i class="fas fa-envelope me-2 text-orange"></i> tiendastihlcabopino@gmail.com</li>
-                        <li><i class="fas fa-map-marker-alt me-2 text-orange"></i> CC/ Cabopino Local 13, 29604, Marbella.</li>
+                    <ul class="list-unstyled lista-contacto">
+                        <li>
+                            <i class="fas fa-phone-alt me-2 text-orange"></i>
+                            <a href="tel:+34952182122">+34 952 182 122</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-mobile-alt me-2 text-orange"></i>
+                            <a href="tel:+34616492121">+34 616 492 121</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope me-2 text-orange"></i>
+                            <a href="mailto:tiendastihlcabopino@gmail.com">tiendastihlcabopino@gmail.com</a>
+                        </li>
+
+                        <li><i class="fas fa-map-marker-alt me-2 text-orange"></i> CC/ Cabopino Local 13, 29604,
+                            Marbella.</li>
                     </ul>
                 </div>
 
