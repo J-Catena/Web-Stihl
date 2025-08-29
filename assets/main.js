@@ -67,6 +67,34 @@ document.addEventListener("DOMContentLoaded", () => {
     enableMouseDragCarousel(document.querySelector('#serviciosCarousel'), serviciosCarousel);
 });
 
+function enableMouseDragCarousel(element, carousel) {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    element.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX;
+        element.classList.add('dragging');
+    });
+    element.addEventListener('mouseleave', () => {
+        isDown = false;
+        element.classList.remove('dragging');
+    });
+    element.addEventListener('mouseup', () => {
+        isDown = false;
+        element.classList.remove('dragging');
+    });
+    element.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX;
+        const walk = (x - startX) * 2; // velocidad scroll
+        carousel.to(carousel._getItemIndex(carousel._element) + (walk > 0 ? -1 : 1));
+        startX = x;
+    });
+}
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const yearSpan = document.getElementById("currentYear");
