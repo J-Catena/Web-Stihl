@@ -284,3 +284,17 @@ form .form-control:focus {
     outline: none;
     box-shadow: none;
 }
+
+/* Aplica solo al carousel de móviles */
+#productosCarousel .carousel-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 450px;
+    
+}
+
+#productosCarousel .descripcion {
+    text-align: center;
+}

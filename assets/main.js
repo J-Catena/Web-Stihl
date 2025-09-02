@@ -108,11 +108,11 @@ document.addEventListener("DOMContentLoaded", function () {
 function googleTranslateElementInit() {
     new google.translate.TranslateElement(
         {
-            pageLanguage: 'es',                  
-            includedLanguages: 'en,fr,de,it',   
+            pageLanguage: 'es',
+            includedLanguages: 'en,fr,de,it',
             layout: google.translate.TranslateElement.InlineLayout.SIMPLE
         },
-        'google_translate_element' 
+        'google_translate_element'
     );
 }
 
