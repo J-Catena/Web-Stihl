@@ -263,10 +263,10 @@ form .form-control:focus {
     transform: translateY(-15px) rotate(-45deg);
 }
 
-/* Opcional: efecto hover para resaltar */
+
 .svg-toggler:hover .line {
     stroke: #ff9500;
-    /* naranja más brillante */
+
 }
 
 .svg-toggler {
@@ -274,9 +274,8 @@ form .form-control:focus {
     background: none;
     padding: 0;
     outline: none;
-    /* quita el borde de enfoque */
     box-shadow: none;
-    /* quita cualquier sombra */
+
 }
 
 .svg-toggler:focus,
@@ -285,16 +284,120 @@ form .form-control:focus {
     box-shadow: none;
 }
 
-/* Aplica solo al carousel de móviles */
+/* carousel de móviles */
 #productosCarousel .carousel-item {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    align-items: stretch;
     min-height: 450px;
-    
+    /* o el valor que necesites */
 }
+
 
 #productosCarousel .descripcion {
     text-align: center;
+}
+
+/* Altura uniforme para todas las tarjetas del carousel */
+#productosCarousel .tarjeta {
+    max-height: 450px;
+    /* altura fija para todas */
+    overflow-y: auto;
+    /* scroll interno si el contenido excede */
+    padding-right: 10px;
+    /* opcional, para que no se solapen scroll y contenido */
+}
+
+/* Opcional: estilizar el scrollbar en navegadores modernos */
+#productosCarousel .tarjeta::-webkit-scrollbar {
+    width: 6px;
+}
+
+#productosCarousel .tarjeta::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+}
+
+/* ==============================
+   Carousel de productos
+   ============================== */
+#productosCarousel .carousel-item {
+    display: flex;
+    justify-content: center;
+}
+
+#productosCarousel .card,
+.card-producto {
+    max-height: 450px;
+    overflow-y: auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Scrollbar WebKit */
+#productosCarousel .card::-webkit-scrollbar,
+.card-producto::-webkit-scrollbar {
+    width: 6px;
+}
+
+#productosCarousel .card::-webkit-scrollbar-thumb,
+.card-producto::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+}
+
+/* Scrollbar Firefox */
+#productosCarousel .card,
+.card-producto {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+/* Indicadores centrados */
+#productosCarousel+.carousel-indicators {
+    bottom: -50px;
+    left: 15%;
+    right: 15%;
+}
+
+/* Imagen dentro de la card */
+#productosCarousel .card img,
+.card-producto img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 5px 5px 0 0;
+}
+
+/* Responsive móvil */
+@media (max-width: 767px) {
+
+    #productosCarousel .card,
+    .card-producto {
+        max-height: none;
+        overflow-y: visible;
+        padding: 1rem 0;
+    }
+
+    #productosCarousel .card img,
+    .card-producto img {
+        height: 200px;
+    }
+}
+
+/* Desktop: múltiples productos por fila */
+@media (min-width: 992px) {
+    #productosCarousel .carousel-inner {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #productosCarousel .carousel-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
 }

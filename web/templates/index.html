@@ -90,138 +90,20 @@
 
     <!-- SECCIÓN PRODUCTOS -->
     <section id="productos" class="py-5" style="background-color: #e1e1e1;">
-        <div class="container justify-content-center">
+        <div class="container">
             <h2 class="titulo-productos text-center mb-4">Productos <span>Destacados</span></h2>
 
-            <!-- Versión escritorio -->
-            <div class="row g-4 d-none d-lg-flex">
-                <!-- KM 131 R -->
-                <div class="col-md-6 d-flex">
-                    <div
-                        class="d-flex flex-md-row flex-column justify-content-evenly align-items-center border rounded shadow-sm bg-white p-3 w-100 h-100">
-                        <div class="text-center flex-shrink-0 me-md-3" style="max-width: 160px;">
-                            <img src="{% static 'img/motor-stihl-combi-km-131-r.jpg' %}" class="img-fluid mb-2"
-                                alt="Motor Combinado KM 131 R">
-                            <h5 class="mb-0">Motor Combinado<br>KM 131 R</h5>
-                        </div>
-                        <div class="descripcion small">
-                            <p>Motor de gasolina (KombiMotor)</p>
-                            <p>Potencia: 1.9 bhp ≈ 1,37 CV</p>
-                            <p>Desplazamiento: 36,3 cc</p>
-                            <p>Peso: 4,4 kg</p>
-                            <p>Capacidad de combustible: 0,71 L</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MS 251 -->
-                <div class="col-md-6 d-flex">
-                    <div
-                        class="d-flex flex-md-row flex-column justify-content-evenly align-items-center border rounded shadow-sm bg-white p-3 w-100 h-100">
-                        <div class="text-center flex-shrink-0 me-md-3" style="max-width: 160px;">
-                            <img src="{% static 'img/motosierra-stihl-ms170.jpg' %}" class="img-fluid mb-2"
-                                alt="Motosierra MS 251">
-                            <h5 class="mb-0">Motosierra<br>MS 251</h5>
-                        </div>
-                        <div class="descripcion small">
-                            <p>Motor de gasolina</p>
-                            <p>Peso (cabezal): 5 kg</p>
-                            <p>Potencia: ~3 bhp ≈ 3,04 CV</p>
-                            <p>Desplazamiento: 45,6 cc</p>
-                            <p>Capacidad de aceite: 0,2 L</p>
-                            <p>Barra recomendada: 46 cm</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- RM 248 T -->
-                <div class="col-md-6 d-flex">
-                    <div
-                        class="d-flex flex-md-row flex-column justify-content-evenly align-items-center border rounded shadow-sm bg-white p-3 w-100 h-100">
-                        <div class="text-center flex-shrink-0 me-md-3" style="max-width: 160px;">
-                            <img src="{% static 'img/STIHL-RM-248-T-1.jpg' %}" class="img-fluid mb-2"
-                                alt="Cortacésped RM 248 T">
-                            <h5 class="mb-0">Cortacésped<br>RM 248 T</h5>
-                        </div>
-                        <div class="descripcion small">
-                            <p>Ancho de corte: 46 cm</p>
-                            <p>Altura de corte: 20–100 mm</p>
-                            <p>Motor: STIHL EVC 205 ≈ 2,37 CV</p>
-                            <p>Superficie: hasta 1 200 m²</p>
-                            <p>Caja recogedora: 52 L</p>
-                            <p>Peso: 32 kg</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- BG 86 -->
-                <div class="col-md-6 d-flex">
-                    <div
-                        class="d-flex flex-md-row flex-column justify-content-evenly align-items-center border rounded shadow-sm bg-white p-3 w-100 h-100">
-                        <div class="text-center flex-shrink-0 me-md-3" style="max-width: 160px;">
-                            <img src="{% static 'img/soplador_stihl.jpg' %}" class="img-fluid mb-2"
-                                alt="Soplador BG 86">
-                            <h5 class="mb-0">Soplador<br>BG 86</h5>
-                        </div>
-                        <div class="descripcion small">
-                            <p>Motor potente de baja emisión</p>
-                            <p>Filtro de aire HD2 lavable</p>
-                            <p>Sistema antivibración</p>
-                            <p>Fuerza de aire ≈ 15 N</p>
-                            <p>Velocidad máxima: ~306 km/h</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FS 120 -->
-                <div class="col-md-6 d-flex">
-                    <div
-                        class="d-flex flex-md-row flex-column justify-content-evenly align-items-center border rounded shadow-sm bg-white p-3 w-100 h-100">
-                        <div class="text-center flex-shrink-0 me-md-3" style="max-width: 160px;">
-                            <img src="{% static 'img/FS-120.jpg' %}" class="img-fluid mb-2" alt="Desbrozadora FS 120">
-                            <h5 class="mb-0">Desbrozadora<br>FS 120</h5>
-                        </div>
-                        <div class="descripcion small">
-                            <p>Motor STIHL 4-MIX® (4-tactos)</p>
-                            <p>Buena relación potencia-peso</p>
-                            <p>Arranque Elastostart</p>
-                            <p>Eje rígido y filtro autolimpiante</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MH 600 -->
-                <div class="col-md-6 d-flex">
-                    <div
-                        class="d-flex flex-md-row flex-column justify-content-evenly align-items-center border rounded shadow-sm bg-white p-3 w-100 h-100">
-                        <div class="text-center flex-shrink-0 me-md-3" style="max-width: 160px;">
-                            <img src="{% static 'img/motoazada-stihl-mh-600.jpg' %}" class="img-fluid mb-2"
-                                alt="Motoazada MH 600">
-                            <h5 class="mb-0">Motoazada<br>MH 600</h5>
-                        </div>
-                        <div class="descripcion small">
-                            <p>Motor gasolina</p>
-                            <p>Desplazamiento: 212 cc</p>
-                            <p>Potencia: 4,4 kW ≈ 6 CV</p>
-                            <p>Ancho de trabajo: ~79 cm</p>
-                            <p>Diámetro de azada: 31 cm</p>
-                            <p>Peso: ~67 kg</p>
-                            <p>Tanque: 3,6 L</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Versión móvil: carousel con descripciones -->
-            <div id="productosCarousel" class="carousel slide d-lg-none">
+            <!-- Carrusel único para todos los tamaños -->
+            <div id="productosCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <!-- KM 131 R -->
+
+                    <!-- Producto 1 -->
                     <div class="carousel-item active">
-                        <div class="border rounded shadow-sm bg-white p-3 text-center" style="min-height: 450px;">
+                        <div class="card-producto border rounded shadow-sm bg-white p-3 text-center">
                             <img src="{% static 'img/motor-stihl-combi-km-131-r.jpg' %}" class="img-fluid mb-2"
-                                alt="Motor combinado KM 131 R">
-                            <h5>Motor Combinado KM 131 R</h5>
-                            <div class="descripcion small mt-2">
+                                alt="Motor Combinado KM 131 R" style="max-width: 200px;">
+                            <h5>Motor Combinado<br>KM 131 R</h5>
+                            <div class="descripcion small">
                                 <p>Motor de gasolina (KombiMotor)</p>
                                 <p>Potencia: 1.9 bhp ≈ 1,37 CV</p>
                                 <p>Desplazamiento: 36,3 cc</p>
@@ -231,13 +113,13 @@
                         </div>
                     </div>
 
-                    <!-- MS 251 -->
+                    <!-- Producto 2 -->
                     <div class="carousel-item">
-                        <div class="border rounded shadow-sm bg-white p-3 text-center" style="min-height: 450px;">
+                        <div class="card-producto border rounded shadow-sm bg-white p-3 text-center">
                             <img src="{% static 'img/motosierra-stihl-ms170.jpg' %}" class="img-fluid mb-2"
-                                alt="Motosierra MS 251">
-                            <h5>Motosierra MS 251</h5>
-                            <div class="descripcion small mt-2">
+                                alt="Motosierra MS 251" style="max-width: 200px;">
+                            <h5>Motosierra<br>MS 251</h5>
+                            <div class="descripcion small">
                                 <p>Motor de gasolina</p>
                                 <p>Peso (cabezal): 5 kg</p>
                                 <p>Potencia: ~3 bhp ≈ 3,04 CV</p>
@@ -248,13 +130,13 @@
                         </div>
                     </div>
 
-                    <!-- RM 248 T -->
+                    <!-- Producto 3 -->
                     <div class="carousel-item">
-                        <div class="border rounded shadow-sm bg-white p-3 text-center" style="min-height: 450px;">
+                        <div class="card-producto border rounded shadow-sm bg-white p-3 text-center">
                             <img src="{% static 'img/STIHL-RM-248-T-1.jpg' %}" class="img-fluid mb-2"
-                                alt="Cortacésped RM 248 T">
-                            <h5>Cortacésped RM 248 T</h5>
-                            <div class="descripcion small mt-2">
+                                alt="Cortacésped RM 248 T" style="max-width: 200px;">
+                            <h5>Cortacésped<br>RM 248 T</h5>
+                            <div class="descripcion small">
                                 <p>Ancho de corte: 46 cm</p>
                                 <p>Altura de corte: 20–100 mm</p>
                                 <p>Motor: STIHL EVC 205 ≈ 2,37 CV</p>
@@ -265,13 +147,13 @@
                         </div>
                     </div>
 
-                    <!-- BG 86 -->
+                    <!-- Producto 4 -->
                     <div class="carousel-item">
-                        <div class="border rounded shadow-sm bg-white p-3 text-center" style="min-height: 450px;">
-                            <img src="{% static 'img/soplador_stihl.jpg' %}" class="img-fluid mb-2"
-                                alt="Soplador BG 86">
-                            <h5>Soplador BG 86</h5>
-                            <div class="descripcion small mt-2">
+                        <div class="card-producto border rounded shadow-sm bg-white p-3 text-center">
+                            <img src="{% static 'img/soplador_stihl.jpg' %}" class="img-fluid mb-2" alt="Soplador BG 86"
+                                style="max-width: 200px;">
+                            <h5>Soplador<br>BG 86</h5>
+                            <div class="descripcion small">
                                 <p>Motor potente de baja emisión</p>
                                 <p>Filtro de aire HD2 lavable</p>
                                 <p>Sistema antivibración</p>
@@ -281,38 +163,19 @@
                         </div>
                     </div>
 
-                    <!-- FS 120 -->
-                    <div class="carousel-item">
-                        <div class="border rounded shadow-sm bg-white p-3 text-center" style="min-height: 450px;">
-                            <img src="{% static 'img/FS-120.jpg' %}" class="img-fluid mb-2" alt="Desbrozadora FS 120">
-                            <h5>Desbrozadora FS 120</h5>
-                            <div class="descripcion small mt-2">
-                                <p>Motor STIHL 4-MIX® (4-tactos)</p>
-                                <p>Buena relación potencia-peso</p>
-                                <p>Arranque Elastostart</p>
-                                <p>Eje rígido y filtro autolimpiante</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- MH 600 -->
-                    <div class="carousel-item">
-                        <div class="border rounded shadow-sm bg-white p-3 text-center" style="min-height: 450px;">
-                            <img src="{% static 'img/motoazada-stihl-mh-600.jpg' %}" class="img-fluid mb-2"
-                                alt="Motoazada MH 600">
-                            <h5>Motoazada MH 600</h5>
-                            <div class="descripcion small mt-2">
-                                <p>Motor gasolina</p>
-                                <p>Desplazamiento: 212 cc</p>
-                                <p>Potencia: 4,4 kW ≈ 6 CV</p>
-                                <p>Ancho de trabajo: ~79 cm</p>
-                                <p>Diámetro de azada: 31 cm</p>
-                                <p>Peso: ~67 kg</p>
-                                <p>Tanque: 3,6 L</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+
+                <!-- Controles -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#productosCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#productosCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
 
                 <!-- Indicadores -->
                 <div class="carousel-indicators mt-3">
@@ -321,12 +184,12 @@
                     <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="1"></button>
                     <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="2"></button>
                     <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="3"></button>
-                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="4"></button>
-                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="5"></button>
                 </div>
+
             </div>
         </div>
     </section>
+
 
 
 
@@ -340,7 +203,7 @@
             <!-- Versión escritorio: 3 columnas -->
             <div class="row g-4 d-none d-lg-flex">
                 <div class="col-md-4">
-                    <div class="text-center h-100 border rounded shadow-sm bg-white">
+                    <div class="text-center h-100 shadow-sm bg-white" style="border-radius: 12px;">
                         <img src="{% static 'img/reparacion-motosierra.jpg' %}" alt="Reparación"
                             class="img-servicio mb-3">
                         <h5>Reparación de maquinaria</h5>
@@ -348,14 +211,14 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="text-center h-100 border rounded shadow-sm bg-white">
+                    <div class="text-center h-100 shadow-sm bg-white" style="border-radius: 12px;">
                         <img src="{% static 'img/repuestos.jpg' %}" alt="Repuestos" class="img-servicio mb-3">
                         <h5>Venta de repuestos</h5>
                         <p>Contamos con stock original de recambios y accesorios.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="text-center h-100 border rounded shadow-sm bg-white">
+                    <div class="text-center h-100 shadow-sm bg-white" style="border-radius: 12px;">
                         <img src="{% static 'img/servicio-personalizado.jpg' %}" alt="Asesoramiento"
                             class="img-servicio mb-3">
                         <h5>Asesoramiento personalizado</h5>
@@ -369,7 +232,7 @@
                 <div class="carousel-inner">
 
                     <div class="carousel-item active">
-                        <div class="text-center h-100 border rounded shadow-sm bg-white">
+                        <div class="text-center h-100 shadow-sm bg-white" style="border-radius: 12px;">
                             <img src="{% static 'img/reparacion-motosierra.jpg' %}" alt="Reparación"
                                 class="img-servicio mb-3">
                             <h5>Reparación de maquinaria</h5>
@@ -378,7 +241,7 @@
                     </div>
 
                     <div class="carousel-item">
-                        <div class="text-center h-100 border rounded shadow-sm bg-white">
+                        <div class="text-center h-100 shadow-sm bg-white" style="border-radius: 12px;">
                             <img src="{% static 'img/repuestos.jpg' %}" alt="Repuestos" class="img-servicio mb-3">
                             <h5>Venta de repuestos</h5>
                             <p>Contamos con stock original de recambios y accesorios.</p>
@@ -386,7 +249,7 @@
                     </div>
 
                     <div class="carousel-item">
-                        <div class="text-center h-100 border rounded shadow-sm bg-white">
+                        <div class="text-center h-100 shadow-sm bg-white" style="border-radius: 12px;">
                             <img src="{% static 'img/servicio-personalizado.jpg' %}" alt="Asesoramiento"
                                 class="img-servicio mb-3">
                             <h5>Asesoramiento personalizado</h5>
@@ -419,9 +282,9 @@
 
     <footer class="bg-dark text-white text-center py-4">
         <p>© <span id="currentYear"></span> Tienda STIHL Cabopino. Todos los derechos reservados.</p>
-        <a href="{% url 'aviso-legal' %}" class="acceso-politica">Aviso Legal -</a>
+        <!-- <a href="{% url 'aviso-legal' %}" class="acceso-politica">Aviso Legal -</a>
         <a href="{% url 'proteccion-datos' %}" class="acceso-politica">Protección de Datos -</a>
-        <a href="{% url 'politica-cookies' %}" class="acceso-politica">Política de Cookies</a>
+        <a href="{% url 'politica-cookies' %}" class="acceso-politica">Política de Cookies</a> -->
 
     </footer>
 
