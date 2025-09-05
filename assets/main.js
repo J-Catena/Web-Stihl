@@ -9,50 +9,42 @@ gsap.from(".hero a", { duration: 1, scale: 0.8, opacity: 0, delay: 0.6, ease: "b
 // Funciones y eventos DOM
 // ==============================
 document.addEventListener("DOMContentLoaded", function () {
-
-    // 🔹 Año actual
+    // Año actual
     const yearSpan = document.getElementById("year") || document.getElementById("currentYear");
     if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-    // 🔹 Inicializar carouseles Bootstrap
-    const productosCarousel = new bootstrap.Carousel('#productosCarousel', { touch: true, interval: false });
-    const serviciosCarousel = new bootstrap.Carousel('#serviciosCarousel', { touch: true, interval: false });
+    // Inicializar carouseles sin autoplay
+    const productosCarousel = document.querySelector('#productosCarousel');
+    const serviciosCarousel = document.querySelector('#serviciosCarousel');
 
-    // 🔹 Ajusta altura de tarjetas del carousel móvil
+    if (productosCarousel) {
+        new bootstrap.Carousel(productosCarousel, { interval: false, ride: false, touch: true });
+    }
+    if (serviciosCarousel) {
+        new bootstrap.Carousel(serviciosCarousel, { interval: false, ride: false, touch: true });
+    }
+
+    // Ajusta altura de tarjetas para que no “salten” en mobile
     function ajustarAlturaCarousel(carouselSelector) {
         const carouselEl = document.querySelector(carouselSelector);
         if (!carouselEl) return;
 
-        const items = carouselEl.querySelectorAll('.carousel-item .card, .carousel-item .card-producto');
+        const items = carouselEl.querySelectorAll('.carousel-item .card-producto');
         if (!items.length) return;
 
         let maxHeight = 0;
-
-        // Resetear altura antes de medir
-        items.forEach(item => item.style.minHeight = 'auto');
-
-        // Calcular altura máxima
+        items.forEach(item => item.style.minHeight = 'auto'); // reset
         items.forEach(item => {
             if (item.offsetHeight > maxHeight) maxHeight = item.offsetHeight;
         });
-
-        // Aplicar altura máxima a todos los items
         items.forEach(item => item.style.minHeight = maxHeight + 'px');
     }
 
     // Ajuste inicial y al redimensionar
     ajustarAlturaCarousel('#productosCarousel');
-    window.addEventListener('resize', () => ajustarAlturaCarousel('#productosCarousel'));
-
-    // 🔹 Clonar items para mostrar múltiples en desktop
-    const carousel = document.querySelector('#productosCarousel');
-    if (carousel && window.innerWidth >= 992) {
-        const items = carousel.querySelectorAll('.carousel-item');
-        items.forEach(item => {
-            const next = item.nextElementSibling || items[0];
-            const clone = next.cloneNode(true);
-            item.appendChild(clone);
-        });
-    }
-
+    ajustarAlturaCarousel('#serviciosCarousel');
+    window.addEventListener('resize', () => {
+        ajustarAlturaCarousel('#productosCarousel');
+        ajustarAlturaCarousel('#serviciosCarousel');
+    });
 });

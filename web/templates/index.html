@@ -81,8 +81,6 @@
                 </ul>
             </div>
 
-            <!-- Tu JS principal -->
-            <script src="{% static 'assets/main.js' %}"></script>
         </div>
     </nav>
 
@@ -93,15 +91,74 @@
         <div class="container">
             <h2 class="titulo-productos text-center mb-4">Productos <span>Destacados</span></h2>
 
-            <!-- Carrusel único para todos los tamaños -->
-            <div id="productosCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
+            <!-- Versión escritorio: 2 columnas -->
+            <div class="row g-4 d-none d-lg-flex">
+                <div class="col-md-6">
+                    <div class="card-producto text-center h-100 shadow-sm bg-white border rounded p-3">
+                        <img src="{% static 'img/motor-stihl-combi-km-131-r.jpg' %}" class="img-fluid mb-2"
+                            alt="Motor Combinado KM 131 R">
+                        <h5>Motor Combinado<br>KM 131 R</h5>
+                        <div class="descripcion small">
+                            <p>Motor de gasolina (KombiMotor)</p>
+                            <p>Potencia: 1.9 bhp ≈ 1,37 CV</p>
+                            <p>Desplazamiento: 36,3 cc</p>
+                            <p>Peso: 4,4 kg</p>
+                            <p>Capacidad de combustible: 0,71 L</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-producto text-center h-100 shadow-sm bg-white border rounded p-3">
+                        <img src="{% static 'img/motosierra-stihl-ms170.jpg' %}" class="img-fluid mb-2"
+                            alt="Motosierra MS 251">
+                        <h5>Motosierra<br>MS 251</h5>
+                        <div class="descripcion small">
+                            <p>Motor de gasolina</p>
+                            <p>Peso (cabezal): 5 kg</p>
+                            <p>Potencia: ~3 bhp ≈ 3,04 CV</p>
+                            <p>Desplazamiento: 45,6 cc</p>
+                            <p>Capacidad de aceite: 0,2 L</p>
+                            <p>Barra recomendada: 46 cm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-producto text-center h-100 shadow-sm bg-white border rounded p-3">
+                        <img src="{% static 'img/STIHL-RM-248-T-1.jpg' %}" class="img-fluid mb-2"
+                            alt="Cortacésped RM 248 T">
+                        <h5>Cortacésped<br>RM 248 T</h5>
+                        <div class="descripcion small">
+                            <p>Ancho de corte: 46 cm</p>
+                            <p>Altura de corte: 20–100 mm</p>
+                            <p>Motor: STIHL EVC 205 ≈ 2,37 CV</p>
+                            <p>Superficie: hasta 1 200 m²</p>
+                            <p>Caja recogedora: 52 L</p>
+                            <p>Peso: 32 kg</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-producto text-center h-100 shadow-sm bg-white border rounded p-3">
+                        <img src="{% static 'img/soplador_stihl.jpg' %}" class="img-fluid mb-2" alt="Soplador BG 86">
+                        <h5>Soplador<br>BG 86</h5>
+                        <div class="descripcion small">
+                            <p>Motor potente de baja emisión</p>
+                            <p>Filtro de aire HD2 lavable</p>
+                            <p>Sistema antivibración</p>
+                            <p>Fuerza de aire ≈ 15 N</p>
+                            <p>Velocidad máxima: ~306 km/h</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                    <!-- Producto 1 -->
+            <!-- Versión móvil: carousel -->
+            <div id="productosCarousel" class="carousel slide d-lg-none">
+                <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <div class="card-producto border rounded shadow-sm bg-white p-3 text-center">
+                        <div class="card-producto text-center h-100 shadow-sm bg-white border rounded p-3 mx-auto">
                             <img src="{% static 'img/motor-stihl-combi-km-131-r.jpg' %}" class="img-fluid mb-2"
-                                alt="Motor Combinado KM 131 R" style="max-width: 200px;">
+                                alt="Motor Combinado KM 131 R">
                             <h5>Motor Combinado<br>KM 131 R</h5>
                             <div class="descripcion small">
                                 <p>Motor de gasolina (KombiMotor)</p>
@@ -112,12 +169,10 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Producto 2 -->
                     <div class="carousel-item">
-                        <div class="card-producto border rounded shadow-sm bg-white p-3 text-center">
+                        <div class="card-producto text-center h-100 shadow-sm bg-white border rounded p-3 mx-auto">
                             <img src="{% static 'img/motosierra-stihl-ms170.jpg' %}" class="img-fluid mb-2"
-                                alt="Motosierra MS 251" style="max-width: 200px;">
+                                alt="Motosierra MS 251">
                             <h5>Motosierra<br>MS 251</h5>
                             <div class="descripcion small">
                                 <p>Motor de gasolina</p>
@@ -129,12 +184,10 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Producto 3 -->
                     <div class="carousel-item">
-                        <div class="card-producto border rounded shadow-sm bg-white p-3 text-center">
+                        <div class="card-producto text-center h-100 shadow-sm bg-white border rounded p-3 mx-auto">
                             <img src="{% static 'img/STIHL-RM-248-T-1.jpg' %}" class="img-fluid mb-2"
-                                alt="Cortacésped RM 248 T" style="max-width: 200px;">
+                                alt="Cortacésped RM 248 T">
                             <h5>Cortacésped<br>RM 248 T</h5>
                             <div class="descripcion small">
                                 <p>Ancho de corte: 46 cm</p>
@@ -146,12 +199,10 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Producto 4 -->
                     <div class="carousel-item">
-                        <div class="card-producto border rounded shadow-sm bg-white p-3 text-center">
-                            <img src="{% static 'img/soplador_stihl.jpg' %}" class="img-fluid mb-2" alt="Soplador BG 86"
-                                style="max-width: 200px;">
+                        <div class="card-producto text-center h-100 shadow-sm bg-white border rounded p-3 mx-auto">
+                            <img src="{% static 'img/soplador_stihl.jpg' %}" class="img-fluid mb-2"
+                                alt="Soplador BG 86">
                             <h5>Soplador<br>BG 86</h5>
                             <div class="descripcion small">
                                 <p>Motor potente de baja emisión</p>
@@ -162,36 +213,22 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-                <!-- Controles -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#productosCarousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#productosCarousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Siguiente</span>
-                </button>
 
                 <!-- Indicadores -->
                 <div class="carousel-indicators mt-3">
                     <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="0" class="active"
-                        aria-current="true"></button>
-                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="2"></button>
-                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="3"></button>
+                        aria-current="true" aria-label="Producto 1"></button>
+                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="1"
+                        aria-label="Producto 2"></button>
+                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="2"
+                        aria-label="Producto 3"></button>
+                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="3"
+                        aria-label="Producto 4"></button>
                 </div>
-
             </div>
         </div>
     </section>
-
-
-
 
 
 

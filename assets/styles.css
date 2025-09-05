@@ -284,88 +284,34 @@ form .form-control:focus {
     box-shadow: none;
 }
 
-/* carousel de móviles */
-#productosCarousel .carousel-item {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    min-height: 450px;
-    /* o el valor que necesites */
-}
-
-
-#productosCarousel .descripcion {
-    text-align: center;
-}
-
-/* Altura uniforme para todas las tarjetas del carousel */
-#productosCarousel .tarjeta {
-    max-height: 450px;
-    /* altura fija para todas */
-    overflow-y: auto;
-    /* scroll interno si el contenido excede */
-    padding-right: 10px;
-    /* opcional, para que no se solapen scroll y contenido */
-}
-
-/* Opcional: estilizar el scrollbar en navegadores modernos */
-#productosCarousel .tarjeta::-webkit-scrollbar {
-    width: 6px;
-}
-
-#productosCarousel .tarjeta::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 3px;
-}
-
 /* ==============================
    Carousel de productos
    ============================== */
+
+/* Carousel items: no forzar flex, solo centrar contenido */
 #productosCarousel .carousel-item {
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    min-height: 450px;
+    /* opcional, para dar altura mínima */
+    position: relative;
+    /* asegura que Bootstrap funcione correctamente */
 }
 
-#productosCarousel .card,
+/* Tarjetas de producto */
 .card-producto {
-    max-height: 450px;
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
     padding: 1rem;
     box-sizing: border-box;
     text-align: center;
-    display: flex;
-    flex-direction: column;
     align-items: center;
+    /* centra contenido dentro de la card */
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Scrollbar WebKit */
-#productosCarousel .card::-webkit-scrollbar,
-.card-producto::-webkit-scrollbar {
-    width: 6px;
-}
-
-#productosCarousel .card::-webkit-scrollbar-thumb,
-.card-producto::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 3px;
-}
-
-/* Scrollbar Firefox */
-#productosCarousel .card,
-.card-producto {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
-}
-
-/* Indicadores centrados */
-#productosCarousel+.carousel-indicators {
-    bottom: -50px;
-    left: 15%;
-    right: 15%;
-}
-
-/* Imagen dentro de la card */
-#productosCarousel .card img,
+/* Imagen dentro de la tarjeta */
 .card-producto img {
     width: 100%;
     height: 250px;
@@ -373,31 +319,38 @@ form .form-control:focus {
     border-radius: 5px 5px 0 0;
 }
 
+/* Scrollbar WebKit (opcional) */
+.card-producto::-webkit-scrollbar {
+    width: 6px;
+}
+
+.card-producto::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+}
+
+/* Scrollbar Firefox (opcional) */
+.card-producto {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+/* Indicadores centrados */
+#productosCarousel .carousel-indicators {
+    bottom: -50px;
+    left: 15%;
+    right: 15%;
+}
+
 /* Responsive móvil */
 @media (max-width: 767px) {
-
-    #productosCarousel .card,
     .card-producto {
         max-height: none;
         overflow-y: visible;
         padding: 1rem 0;
     }
 
-    #productosCarousel .card img,
     .card-producto img {
         height: 200px;
-    }
-}
-
-/* Desktop: múltiples productos por fila */
-@media (min-width: 992px) {
-    #productosCarousel .carousel-inner {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    #productosCarousel .carousel-item {
-        flex: 0 0 50%;
-        max-width: 50%;
     }
 }
