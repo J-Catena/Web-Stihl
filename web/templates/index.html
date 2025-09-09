@@ -71,13 +71,36 @@
                         <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
                     </li>
 
-                    <!-- Botón de idioma estilizado -->
-                    <li class="nav-item ms-3">
-                        <a href="#" class="btn-translate">
-                            🌐
-                            <div id="google_translate_element" style="display:inline-block;"></div>
+                    <!-- Botón de idioma -->
+                    <!-- Botón Idioma con menú -->
+                    <li class="nav-item dropdown ms-3">
+                        <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            🌐 Idioma
                         </a>
+                        <ul class="dropdown-menu" aria-labelledby="langDropdown">
+                            <li><a class="dropdown-item translate-link" href="#" data-lang="en">English</a></li>
+                            <li><a class="dropdown-item translate-link" href="#" data-lang="fr">Français</a></li>
+                            <li><a class="dropdown-item translate-link" href="#" data-lang="de">Deutsch</a></li>
+                            <li><a class="dropdown-item translate-link" href="#" data-lang="es">Español</a></li>
+                        </ul>
                     </li>
+
+                    <!-- Contenedor oculto de Google Translate -->
+                    <div id="google_translate_element" style="display:none;"></div>
+
+                    <!-- Inicialización de Google Translate -->
+                    <script>
+                        function googleTranslateElementInit() {
+                            new google.translate.TranslateElement({
+                                pageLanguage: 'es', // idioma original de tu página
+                                includedLanguages: 'en,fr,de,es', // idiomas disponibles
+                                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                            }, 'google_translate_element');
+                        }
+                    </script>
+                    <script
+                        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
                 </ul>
             </div>
 

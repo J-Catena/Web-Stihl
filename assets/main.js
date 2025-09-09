@@ -47,4 +47,45 @@ document.addEventListener("DOMContentLoaded", function () {
         ajustarAlturaCarousel('#productosCarousel');
         ajustarAlturaCarousel('#serviciosCarousel');
     });
+
+    // ==============================
+    // Traducción con Google Translate
+    // ==============================
+    const langLinks = document.querySelectorAll(".translate-link");
+
+    langLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const lang = this.dataset.lang;
+
+            const select = document.querySelector("#google_translate_element select");
+
+            if (select) {
+                // Si el <select> ya está disponible, cambia el idioma
+                select.value = lang;
+                select.dispatchEvent(new Event("change"));
+            } else {
+                // Reintentar hasta 10 veces cada 300ms
+                let attempts = 0;
+                const interval = setInterval(() => {
+                    attempts++;
+                    const sel = document.querySelector("#google_translate_element select");
+                    if (sel) {
+                        sel.value = lang;
+                        sel.dispatchEvent(new Event("change"));
+                        clearInterval(interval);
+                    }
+                    if (attempts > 10) {
+                        clearInterval(interval);
+                        // Fallback: usar cookie para forzar idioma y recargar la página
+                        document.cookie = `googtrans=/es/${lang};path=/`;
+                        document.cookie = `googtrans=/es/${lang};domain=.${location.hostname};path=/`;
+                        location.reload();
+                    }
+                }, 300);
+            }
+        });
+    });
 });
+
+
