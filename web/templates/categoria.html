@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5 text-capitalize">
+      Productos de {{ categoria }}
+    </h2>
+
+    <!-- Filtros de tipo -->
+    <div class="text-center mb-4">
+      <a
+        href="?tipo=bateria"
+        class="btn btn-outline-primary mx-2 {% if request.GET.tipo == 'bateria' %}active{% endif %}"
+      >
+        Batería
+      </a>
+      <a
+        href="?tipo=gasolina"
+        class="btn btn-outline-primary mx-2 {% if request.GET.tipo == 'gasolina' %}active{% endif %}"
+      >
+        Gasolina
+      </a>
+    </div>
+
+    <!-- Cards de productos -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      {% for producto in productos %}
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <img
+            src="{{ producto.imagen }}"
+            class="card-img-top"
+            alt="{{ producto.nombre }}"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ producto.nombre }}</h5>
+            <p class="card-text small text-muted">
+              {{ producto.descripcion }}
+            </p>
+            <ul class="list-unstyled small">
+              {% for caracteristica in producto.caracteristicas %}
+              <li>• {{ caracteristica }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <div class="col-12 text-center">
+        <p class="text-muted">
+          No hay productos disponibles en esta categoría.
+        </p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

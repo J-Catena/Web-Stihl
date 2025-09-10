@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Categorías de Productos</h2>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      {% for key, nombre in categorias.items %}
+      <div class="col">
+        <div class="card h-100 shadow-sm border-0 position-relative">
+          <img
+            src="{% static 'img/categorias/' %}{{ key }}.jpg"
+            class="card-img-top"
+            alt="{{ nombre }}"
+          />
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ nombre }}</h5>
+            <a href="{% url 'categoria' key %}" class="stretched-link"></a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

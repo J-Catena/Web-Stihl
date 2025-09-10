@@ -1,355 +1,445 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>STIHL Cabopino</title>
 
     <!-- Favicon mínimo con tu logo -->
-    <link rel="icon" type="image/png" href="{% static 'img/logo_europaGolf.png' %}">
-    <link rel="apple-touch-icon" href="{% static 'img/logo_europaGolf.png' %}">
-    <meta name="application-name" content="STIHL Cabopino">
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'img/logo_europaGolf.png' %}"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="{% static 'img/logo_europaGolf.png' %}"
+    />
+    <meta name="application-name" content="STIHL Cabopino" />
 
     <!-- CSS y JS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
-</head>
+  </head>
 
-
-
-<body>
-    <h1 style="font-size: 0; margin: 0; padding: 0;">tienda stihl cabopino. Jorge Garcia Bartolome</h1>
+  <body>
+    <h1 style="font-size: 0; margin: 0; padding: 0">
+      tienda stihl cabopino. Jorge Garcia Bartolome
+    </h1>
 
     <!-- Hero/Home -->
     <header class="hero text-black text-center d-flex align-items-center">
-        <div class="cuadro-texto container">
-            <h1 class="titulo-principal">Bienvenido a <span>Europa Golf</span></h1>
-            <p class="presentacion">Tu distribuidor <span>STIHL</span> autorizado de herramientas y maquinaria</p>
-        </div>
+      <div class="cuadro-texto container">
+        <h1 class="titulo-principal">Bienvenido a <span>Europa Golf</span></h1>
+        <p class="presentacion">
+          Tu distribuidor <span>STIHL</span> autorizado de herramientas y
+          maquinaria
+        </p>
+      </div>
     </header>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
-        <div class="container">
-            <!-- Logo -->
-            <a class="navbar-brand d-flex align-items-center" href="{% url 'index' %}">
-                <img src="{% static 'img/logo_europaGolf.png' %}" alt="STIHL Logo" width="120" class="me-2">
-            </a>
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top"
+    >
+      <div class="container">
+        <!-- Logo -->
+        <a
+          class="navbar-brand d-flex align-items-center"
+          href="{% url 'index' %}"
+        >
+          <img
+            src="{% static 'img/logo_europaGolf.png' %}"
+            alt="STIHL Logo"
+            width="120"
+            class="me-2"
+          />
+        </a>
 
-            <!-- Botón hamburguesa personalizado -->
-            <button class="navbar-toggler svg-toggler collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <svg width="40" height="40" viewBox="0 0 100 100">
-                    <path class="line top" d="M 20,30 H 80" stroke="#ff7f00" stroke-width="8" stroke-linecap="round" />
-                    <path class="line middle" d="M 20,50 H 80" stroke="#ff7f00" stroke-width="8"
-                        stroke-linecap="round" />
-                    <path class="line bottom" d="M 20,70 H 80" stroke="#ff7f00" stroke-width="8"
-                        stroke-linecap="round" />
-                </svg>
-            </button>
+        <!-- Botón hamburguesa personalizado -->
+        <button
+          class="navbar-toggler svg-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <svg width="40" height="40" viewBox="0 0 100 100">
+            <path
+              class="line top"
+              d="M 20,30 H 80"
+              stroke="#ff7f00"
+              stroke-width="8"
+              stroke-linecap="round"
+            />
+            <path
+              class="line middle"
+              d="M 20,50 H 80"
+              stroke="#ff7f00"
+              stroke-width="8"
+              stroke-linecap="round"
+            />
+            <path
+              class="line bottom"
+              d="M 20,70 H 80"
+              stroke="#ff7f00"
+              stroke-width="8"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
 
+        <!-- Enlaces y botón de idioma -->
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav align-items-end">
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'index' %}">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'index' %}#productos"
+                >Productos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'index' %}#servicios"
+                >Servicios</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+            </li>
 
+            <!-- Botón de idioma -->
+            <!-- Botón Idioma con menú -->
+            <li class="nav-item dropdown ms-3">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="langDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                🌐 Idioma
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="langDropdown">
+                <li>
+                  <a
+                    class="dropdown-item translate-link"
+                    href="#"
+                    data-lang="en"
+                    >English</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item translate-link"
+                    href="#"
+                    data-lang="fr"
+                    >Français</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item translate-link"
+                    href="#"
+                    data-lang="de"
+                    >Deutsch</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item translate-link"
+                    href="#"
+                    data-lang="es"
+                    >Español</a
+                  >
+                </li>
+              </ul>
+            </li>
 
-            <!-- Enlaces y botón de idioma -->
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-end">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'index' %}">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'index' %}#productos">Productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'index' %}#servicios">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
-                    </li>
+            <!-- Contenedor oculto de Google Translate -->
+            <div id="google_translate_element" style="display: none"></div>
 
-                    <!-- Botón de idioma -->
-                    <!-- Botón Idioma con menú -->
-                    <li class="nav-item dropdown ms-3">
-                        <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            🌐 Idioma
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="langDropdown">
-                            <li><a class="dropdown-item translate-link" href="#" data-lang="en">English</a></li>
-                            <li><a class="dropdown-item translate-link" href="#" data-lang="fr">Français</a></li>
-                            <li><a class="dropdown-item translate-link" href="#" data-lang="de">Deutsch</a></li>
-                            <li><a class="dropdown-item translate-link" href="#" data-lang="es">Español</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- Contenedor oculto de Google Translate -->
-                    <div id="google_translate_element" style="display:none;"></div>
-
-                    <!-- Inicialización de Google Translate -->
-                    <script>
-                        function googleTranslateElementInit() {
-                            new google.translate.TranslateElement({
-                                pageLanguage: 'es', // idioma original de tu página
-                                includedLanguages: 'en,fr,de,es', // idiomas disponibles
-                                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-                            }, 'google_translate_element');
-                        }
-                    </script>
-                    <script
-                        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-                </ul>
-            </div>
-
+            <!-- Inicialización de Google Translate -->
+            <script>
+              function googleTranslateElementInit() {
+                new google.translate.TranslateElement(
+                  {
+                    pageLanguage: "es", // idioma original de tu página
+                    includedLanguages: "en,fr,de,es", // idiomas disponibles
+                    layout:
+                      google.translate.TranslateElement.InlineLayout.SIMPLE,
+                  },
+                  "google_translate_element"
+                );
+              }
+            </script>
+            <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+          </ul>
         </div>
+      </div>
     </nav>
 
-
-
     <!-- SECCIÓN PRODUCTOS -->
-    <section id="productos" class="py-5" style="background-color: #e1e1e1;">
-        <div class="container">
-            <h2 class="titulo-productos text-center mb-4">Productos <span>Destacados</span></h2>
-
-            <!-- Versión escritorio: 2 columnas -->
-            <div class="row g-4 d-none d-lg-flex">
-                <div class="col-md-6">
-                    <div class="card-producto text-center h-100 shadow-sm bg-white border rounded p-3">
-                        <img src="{% static 'img/motor-stihl-combi-km-131-r.jpg' %}" class="img-fluid mb-2"
-                            alt="Motor Combinado KM 131 R">
-                        <h5>Motor Combinado<br>KM 131 R</h5>
-                        <div class="descripcion small">
-                            <p>Motor de gasolina (KombiMotor)</p>
-                            <p>Potencia: 1.9 bhp ≈ 1,37 CV</p>
-                            <p>Desplazamiento: 36,3 cc</p>
-                            <p>Peso: 4,4 kg</p>
-                            <p>Capacidad de combustible: 0,71 L</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card-producto text-center h-100 shadow-sm bg-white border rounded p-3">
-                        <img src="{% static 'img/motosierra-stihl-ms170.jpg' %}" class="img-fluid mb-2"
-                            alt="Motosierra MS 251">
-                        <h5>Motosierra<br>MS 251</h5>
-                        <div class="descripcion small">
-                            <p>Motor de gasolina</p>
-                            <p>Peso (cabezal): 5 kg</p>
-                            <p>Potencia: ~3 bhp ≈ 3,04 CV</p>
-                            <p>Desplazamiento: 45,6 cc</p>
-                            <p>Capacidad de aceite: 0,2 L</p>
-                            <p>Barra recomendada: 46 cm</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card-producto text-center h-100 shadow-sm bg-white border rounded p-3">
-                        <img src="{% static 'img/STIHL-RM-248-T-1.jpg' %}" class="img-fluid mb-2"
-                            alt="Cortacésped RM 248 T">
-                        <h5>Cortacésped<br>RM 248 T</h5>
-                        <div class="descripcion small">
-                            <p>Ancho de corte: 46 cm</p>
-                            <p>Altura de corte: 20–100 mm</p>
-                            <p>Motor: STIHL EVC 205 ≈ 2,37 CV</p>
-                            <p>Superficie: hasta 1 200 m²</p>
-                            <p>Caja recogedora: 52 L</p>
-                            <p>Peso: 32 kg</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card-producto text-center h-100 shadow-sm bg-white border rounded p-3">
-                        <img src="{% static 'img/soplador_stihl.jpg' %}" class="img-fluid mb-2" alt="Soplador BG 86">
-                        <h5>Soplador<br>BG 86</h5>
-                        <div class="descripcion small">
-                            <p>Motor potente de baja emisión</p>
-                            <p>Filtro de aire HD2 lavable</p>
-                            <p>Sistema antivibración</p>
-                            <p>Fuerza de aire ≈ 15 N</p>
-                            <p>Velocidad máxima: ~306 km/h</p>
-                        </div>
-                    </div>
-                </div>
+    <section id="productos" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5">Categorías de Productos</h2>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          <!-- Motores Combinados -->
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0 position-relative">
+              <img
+                src="{% static 'img/categorias/motores-combinados.jpg' %}"
+                class="card-img-top"
+                alt="Motores Combinados"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Motores Combinados</h5>
+                <p class="card-text small text-muted">
+                  Versátiles, potentes y ligeros. Para tareas de jardinería.
+                </p>
+                <a
+                  href="{% url 'categoria' 'motores' %}"
+                  class="stretched-link"
+                ></a>
+              </div>
             </div>
+          </div>
 
-            <!-- Versión móvil: carousel -->
-            <div id="productosCarousel" class="carousel slide d-lg-none">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="card-producto text-center h-100 shadow-sm bg-white border rounded p-3 mx-auto">
-                            <img src="{% static 'img/motor-stihl-combi-km-131-r.jpg' %}" class="img-fluid mb-2"
-                                alt="Motor Combinado KM 131 R">
-                            <h5>Motor Combinado<br>KM 131 R</h5>
-                            <div class="descripcion small">
-                                <p>Motor de gasolina (KombiMotor)</p>
-                                <p>Potencia: 1.9 bhp ≈ 1,37 CV</p>
-                                <p>Desplazamiento: 36,3 cc</p>
-                                <p>Peso: 4,4 kg</p>
-                                <p>Capacidad de combustible: 0,71 L</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="card-producto text-center h-100 shadow-sm bg-white border rounded p-3 mx-auto">
-                            <img src="{% static 'img/motosierra-stihl-ms170.jpg' %}" class="img-fluid mb-2"
-                                alt="Motosierra MS 251">
-                            <h5>Motosierra<br>MS 251</h5>
-                            <div class="descripcion small">
-                                <p>Motor de gasolina</p>
-                                <p>Peso (cabezal): 5 kg</p>
-                                <p>Potencia: ~3 bhp ≈ 3,04 CV</p>
-                                <p>Desplazamiento: 45,6 cc</p>
-                                <p>Capacidad de aceite: 0,2 L</p>
-                                <p>Barra recomendada: 46 cm</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="card-producto text-center h-100 shadow-sm bg-white border rounded p-3 mx-auto">
-                            <img src="{% static 'img/STIHL-RM-248-T-1.jpg' %}" class="img-fluid mb-2"
-                                alt="Cortacésped RM 248 T">
-                            <h5>Cortacésped<br>RM 248 T</h5>
-                            <div class="descripcion small">
-                                <p>Ancho de corte: 46 cm</p>
-                                <p>Altura de corte: 20–100 mm</p>
-                                <p>Motor: STIHL EVC 205 ≈ 2,37 CV</p>
-                                <p>Superficie: hasta 1 200 m²</p>
-                                <p>Caja recogedora: 52 L</p>
-                                <p>Peso: 32 kg</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="card-producto text-center h-100 shadow-sm bg-white border rounded p-3 mx-auto">
-                            <img src="{% static 'img/soplador_stihl.jpg' %}" class="img-fluid mb-2"
-                                alt="Soplador BG 86">
-                            <h5>Soplador<br>BG 86</h5>
-                            <div class="descripcion small">
-                                <p>Motor potente de baja emisión</p>
-                                <p>Filtro de aire HD2 lavable</p>
-                                <p>Sistema antivibración</p>
-                                <p>Fuerza de aire ≈ 15 N</p>
-                                <p>Velocidad máxima: ~306 km/h</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Indicadores -->
-                <div class="carousel-indicators mt-3">
-                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Producto 1"></button>
-                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="1"
-                        aria-label="Producto 2"></button>
-                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="2"
-                        aria-label="Producto 3"></button>
-                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="3"
-                        aria-label="Producto 4"></button>
-                </div>
+          <!-- Motosierras -->
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0 position-relative">
+              <img
+                src="{% static 'img/categorias/motosierras.jpg' %}"
+                class="card-img-top"
+                alt="Motosierras"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Motosierras</h5>
+                <p class="card-text small text-muted">
+                  Desde uso doméstico hasta profesional. Precisión y potencia.
+                </p>
+                <a
+                  href="{% url 'categoria' 'motosierras' %}"
+                  class="stretched-link"
+                ></a>
+              </div>
             </div>
+          </div>
+
+          <!-- Cortacésped -->
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0 position-relative">
+              <img
+                src="{% static 'img/categorias/cortacesped.jpg' %}"
+                class="card-img-top"
+                alt="Cortacésped"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Cortacésped</h5>
+                <p class="card-text small text-muted">
+                  Modelos potentes, cómodos y eficaces para cada tipo de jardín.
+                </p>
+                <a
+                  href="{% url 'categoria' 'cortacesped' %}"
+                  class="stretched-link"
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sopladoras -->
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0 position-relative">
+              <img
+                src="{% static 'img/categorias/sopladoras.jpg' %}"
+                class="card-img-top"
+                alt="Sopladoras"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Sopladoras</h5>
+                <p class="card-text small text-muted">
+                  Ideal para limpieza de hojas y suciedad en grandes
+                  superficies.
+                </p>
+                <a
+                  href="{% url 'categoria' 'sopladoras' %}"
+                  class="stretched-link"
+                ></a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-
-
 
     <!-- SECCIÓN SERVICIOS -->
     <section id="servicios" class="py-5">
-        <div class="container">
-            <h2 class="titulo-servicios text-center mb-4">Nuestros Servicios</h2>
+      <div class="container">
+        <h2 class="titulo-servicios text-center mb-4">Nuestros Servicios</h2>
 
-            <!-- Versión escritorio: 3 columnas -->
-            <div class="row g-4 d-none d-lg-flex">
-                <div class="col-md-4">
-                    <div class="text-center h-100 shadow-sm bg-white" style="border-radius: 12px;">
-                        <img src="{% static 'img/reparacion-motosierra.jpg' %}" alt="Reparación"
-                            class="img-servicio mb-3">
-                        <h5>Reparación de maquinaria</h5>
-                        <p>Servicio técnico especializado para herramientas STIHL.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="text-center h-100 shadow-sm bg-white" style="border-radius: 12px;">
-                        <img src="{% static 'img/repuestos.jpg' %}" alt="Repuestos" class="img-servicio mb-3">
-                        <h5>Venta de repuestos</h5>
-                        <p>Contamos con stock original de recambios y accesorios.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="text-center h-100 shadow-sm bg-white" style="border-radius: 12px;">
-                        <img src="{% static 'img/servicio-personalizado.jpg' %}" alt="Asesoramiento"
-                            class="img-servicio mb-3">
-                        <h5>Asesoramiento personalizado</h5>
-                        <p>Te ayudamos a elegir la herramienta adecuada según tus necesidades.</p>
-                    </div>
-                </div>
+        <!-- Versión escritorio: 3 columnas -->
+        <div class="row g-4 d-none d-lg-flex">
+          <div class="col-md-4">
+            <div
+              class="text-center h-100 shadow-sm bg-white"
+              style="border-radius: 12px"
+            >
+              <img
+                src="{% static 'img/reparacion-motosierra.jpg' %}"
+                alt="Reparación"
+                class="img-servicio mb-3"
+              />
+              <h5>Reparación de maquinaria</h5>
+              <p>Servicio técnico especializado para herramientas STIHL.</p>
             </div>
-
-            <!-- Versión móvil: carousel -->
-            <div id="serviciosCarousel" class="carousel slide d-lg-none">
-                <div class="carousel-inner">
-
-                    <div class="carousel-item active">
-                        <div class="text-center h-100 shadow-sm bg-white" style="border-radius: 12px;">
-                            <img src="{% static 'img/reparacion-motosierra.jpg' %}" alt="Reparación"
-                                class="img-servicio mb-3">
-                            <h5>Reparación de maquinaria</h5>
-                            <p>Servicio técnico especializado para herramientas STIHL.</p>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <div class="text-center h-100 shadow-sm bg-white" style="border-radius: 12px;">
-                            <img src="{% static 'img/repuestos.jpg' %}" alt="Repuestos" class="img-servicio mb-3">
-                            <h5>Venta de repuestos</h5>
-                            <p>Contamos con stock original de recambios y accesorios.</p>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <div class="text-center h-100 shadow-sm bg-white" style="border-radius: 12px;">
-                            <img src="{% static 'img/servicio-personalizado.jpg' %}" alt="Asesoramiento"
-                                class="img-servicio mb-3">
-                            <h5>Asesoramiento personalizado</h5>
-                            <p>Te ayudamos a elegir la herramienta adecuada según tus necesidades.</p>
-                        </div>
-                    </div>
-
-                </div>
-
-
-
-                <div class="carousel-indicators mt-3">
-                    <button type="button" data-bs-target="#serviciosCarousel" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Servicio 1"></button>
-                    <button type="button" data-bs-target="#serviciosCarousel" data-bs-slide-to="1"
-                        aria-label="Servicio 2"></button>
-                    <button type="button" data-bs-target="#serviciosCarousel" data-bs-slide-to="2"
-                        aria-label="Servicio 3"></button>
-                </div>
+          </div>
+          <div class="col-md-4">
+            <div
+              class="text-center h-100 shadow-sm bg-white"
+              style="border-radius: 12px"
+            >
+              <img
+                src="{% static 'img/repuestos.jpg' %}"
+                alt="Repuestos"
+                class="img-servicio mb-3"
+              />
+              <h5>Venta de repuestos</h5>
+              <p>Contamos con stock original de recambios y accesorios.</p>
             </div>
-
+          </div>
+          <div class="col-md-4">
+            <div
+              class="text-center h-100 shadow-sm bg-white"
+              style="border-radius: 12px"
+            >
+              <img
+                src="{% static 'img/servicio-personalizado.jpg' %}"
+                alt="Asesoramiento"
+                class="img-servicio mb-3"
+              />
+              <h5>Asesoramiento personalizado</h5>
+              <p>
+                Te ayudamos a elegir la herramienta adecuada según tus
+                necesidades.
+              </p>
+            </div>
+          </div>
         </div>
-    </section>
 
+        <!-- Versión móvil: carousel -->
+        <div id="serviciosCarousel" class="carousel slide d-lg-none">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div
+                class="text-center h-100 shadow-sm bg-white"
+                style="border-radius: 12px"
+              >
+                <img
+                  src="{% static 'img/reparacion-motosierra.jpg' %}"
+                  alt="Reparación"
+                  class="img-servicio mb-3"
+                />
+                <h5>Reparación de maquinaria</h5>
+                <p>Servicio técnico especializado para herramientas STIHL.</p>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div
+                class="text-center h-100 shadow-sm bg-white"
+                style="border-radius: 12px"
+              >
+                <img
+                  src="{% static 'img/repuestos.jpg' %}"
+                  alt="Repuestos"
+                  class="img-servicio mb-3"
+                />
+                <h5>Venta de repuestos</h5>
+                <p>Contamos con stock original de recambios y accesorios.</p>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div
+                class="text-center h-100 shadow-sm bg-white"
+                style="border-radius: 12px"
+              >
+                <img
+                  src="{% static 'img/servicio-personalizado.jpg' %}"
+                  alt="Asesoramiento"
+                  class="img-servicio mb-3"
+                />
+                <h5>Asesoramiento personalizado</h5>
+                <p>
+                  Te ayudamos a elegir la herramienta adecuada según tus
+                  necesidades.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-indicators mt-3">
+            <button
+              type="button"
+              data-bs-target="#serviciosCarousel"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Servicio 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#serviciosCarousel"
+              data-bs-slide-to="1"
+              aria-label="Servicio 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#serviciosCarousel"
+              data-bs-slide-to="2"
+              aria-label="Servicio 3"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- WhatsApp Button -->
     <a href="https://wa.me/34616492121" class="whatsapp-float" target="_blank">
-        <img src="{% static 'img/whatsapp-icon.webp' %}" alt="WhatsApp" width="60">
+      <img
+        src="{% static 'img/whatsapp-icon.webp' %}"
+        alt="WhatsApp"
+        width="60"
+      />
     </a>
 
     <footer class="bg-dark text-white text-center py-4">
-        <p>© <span id="currentYear"></span> Tienda STIHL Cabopino. Todos los derechos reservados.</p>
-        <!-- <a href="{% url 'aviso-legal' %}" class="acceso-politica">Aviso Legal -</a>
+      <p>
+        © <span id="currentYear"></span> Tienda STIHL Cabopino. Todos los
+        derechos reservados.
+      </p>
+      <!-- <a href="{% url 'aviso-legal' %}" class="acceso-politica">Aviso Legal -</a>
         <a href="{% url 'proteccion-datos' %}" class="acceso-politica">Protección de Datos -</a>
         <a href="{% url 'politica-cookies' %}" class="acceso-politica">Política de Cookies</a> -->
-
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{% static 'main.js' %}"></script>
-</body>
-
+  </body>
 </html>
