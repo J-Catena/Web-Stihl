@@ -354,3 +354,20 @@ form .form-control:focus {
         height: 200px;
     }
 }
+
+
+.stihl-btn {
+    border: 2px solid #ff6600;
+    background-color: white;
+    color: #ff6600;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 0.5rem 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.stihl-btn:hover,
+.stihl-btn.active {
+    background-color: #ff6600;
+    color: white;
+}

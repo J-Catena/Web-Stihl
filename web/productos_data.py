@@ -59,8 +59,8 @@ PRODUCTOS = {
         "nombre": "Cortacésped",
         "productos": [
             {
-                "nombre": "RM 561",
-                "imagen": "img/productos/rm561.jpg",
+                "nombre": "RM 248",
+                "imagen": "img/productos/rm248.jpg",
                 "tipo": "gasolina",
                 "descripcion": "Cortacésped de alto rendimiento, ideal para superficies grandes.",
                 "caracteristicas": [

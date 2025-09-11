@@ -1,42 +1,42 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block content %}
 <section class="py-5">
   <div class="container">
-    <h2 class="text-center mb-5 text-capitalize">
-      Productos de {{ categoria }}
-    </h2>
 
-    <!-- Filtros de tipo -->
-    <div class="text-center mb-4">
-      <a
-        href="?tipo=bateria"
-        class="btn btn-outline-primary mx-2 {% if request.GET.tipo == 'bateria' %}active{% endif %}"
-      >
-        Batería
-      </a>
-      <a
-        href="?tipo=gasolina"
-        class="btn btn-outline-primary mx-2 {% if request.GET.tipo == 'gasolina' %}active{% endif %}"
-      >
-        Gasolina
+    <!-- Botón volver -->
+    <div class="mb-4">
+      <a href="{% url 'index' %}#productos" class="btn btn-outline-secondary">
+        ← Volver a categorías
       </a>
     </div>
 
-    <!-- Cards de productos -->
+    <!-- Título de la categoría -->
+    <h2 class="text-center mb-4 text-capitalize">
+      {{ categoria_nombre }}
+    </h2>
+
+    <!-- Botones de filtro -->
+    <div class="text-center mb-4">
+      <a href="?tipo=bateria" class="btn stihl-btn mx-2 {% if request.GET.tipo == 'bateria' %}active{% endif %}">
+        🔋 Batería
+      </a>
+      <a href="?tipo=gasolina" class="btn stihl-btn mx-2 {% if request.GET.tipo == 'gasolina' %}active{% endif %}">
+        ⛽ Gasolina
+      </a>
+    </div>
+
+    <!-- Productos -->
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
       {% for producto in productos %}
+      {% if not request.GET.tipo or producto.tipo == request.GET.tipo %}
       <div class="col">
         <div class="card h-100 shadow-sm">
-          <img
-            src="{{ producto.imagen }}"
-            class="card-img-top"
-            alt="{{ producto.nombre }}"
-          />
+          <img src="{% static producto.imagen %}" class="card-img-top" alt="{{ producto.nombre }}" />
           <div class="card-body">
             <h5 class="card-title">{{ producto.nombre }}</h5>
-            <p class="card-text small text-muted">
-              {{ producto.descripcion }}
-            </p>
+            <p class="card-text small text-muted">{{ producto.descripcion }}</p>
             <ul class="list-unstyled small">
               {% for caracteristica in producto.caracteristicas %}
               <li>• {{ caracteristica }}</li>
@@ -45,14 +45,16 @@
           </div>
         </div>
       </div>
-      {% empty %}
-      <div class="col-12 text-center">
-        <p class="text-muted">
-          No hay productos disponibles en esta categoría.
-        </p>
-      </div>
+      {% endif %}
       {% endfor %}
     </div>
+
+    {% if not productos %}
+    <div class="text-center mt-4">
+      <p class="text-muted">No hay productos disponibles.</p>
+    </div>
+    {% endif %}
+
   </div>
 </section>
 {% endblock %}
