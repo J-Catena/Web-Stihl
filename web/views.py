@@ -18,7 +18,7 @@ def contacto(request):
 
         asunto = f'Nuevo mensaje de contacto de {nombre}'
         mensaje = f'Nombre: {nombre}\nEmail: {email}\n\nConsulta:\n{consulta}'
-        destinatario = ['tiendastihlcabopino@gmail.com']  # Reemplaza por tu correo real
+        destinatario = ['tiendastihlcabopino@gmail.com']
 
         try:
             send_mail(

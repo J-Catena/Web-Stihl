@@ -72,7 +72,7 @@
                         <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
                     </li>
 
-                    
+
                     <!-- Botón Idioma con menú -->
                     <li class="nav-item dropdown ms-3">
                         <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button"
@@ -103,8 +103,8 @@
                         function googleTranslateElementInit() {
                             new google.translate.TranslateElement(
                                 {
-                                    pageLanguage: "es", // idioma original de tu página
-                                    includedLanguages: "en,fr,de,es", // idiomas disponibles
+                                    pageLanguage: "es",
+                                    includedLanguages: "en,fr,de,es",
                                     layout:
                                         google.translate.TranslateElement.InlineLayout.SIMPLE,
                                 },
@@ -122,7 +122,7 @@
     <!-- SECCIÓN PRODUCTOS -->
     <section id="productos" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-5">Productos Destacados</h2>
+            <h2 class="titulo-productos text-center mb-5">Productos Destacados</h2>
             <div class="row row-cols-1 row-cols-md-2 g-4">
                 <!-- Motores Combinados -->
                 <div class="col">
@@ -273,10 +273,13 @@
     </a>
 
     <footer class="bg-dark text-white text-center py-4">
-        <p>
-            © <span id="currentYear"></span> Tienda STIHL Cabopino. Todos los
-            derechos reservados.
-        </p>
+        <div class="d-flex justify-content-between ">
+            <p>
+                © <span id="currentYear"></span> Jorge Garcia, Stihl Cabopino. Todos los
+                derechos reservados.
+            </p>
+            <p>Diseñado y desarrollado por Juan Catena</p>
+        </div>
         <!-- <a href="{% url 'aviso-legal' %}" class="acceso-politica">Aviso Legal -</a>
         <a href="{% url 'proteccion-datos' %}" class="acceso-politica">Protección de Datos -</a>
         <a href="{% url 'politica-cookies' %}" class="acceso-politica">Política de Cookies</a> -->
