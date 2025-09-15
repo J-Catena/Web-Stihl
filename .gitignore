@@ -7,7 +7,8 @@ __pycache__/
 env/
 venv/
 
-# Archivos de base de datos
+# Archivos de base de datos locales
+db.sqlite3
 *.sqlite3
 *.db
 
@@ -21,11 +22,10 @@ Thumbs.db
 # Archivos de log
 *.log
 
-# Archivos estáticos (si se generan automáticamente)
-staticfiles/
-static/
+# Archivos estáticos recolectados en producción
+/staticfiles/
 
-# Archivos de media (si se generan automáticamente)
+# Archivos de media subidos por usuarios (si los hubiera)
 media/
 
 # Node (si usas npm o frontend tooling)
