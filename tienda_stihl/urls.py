@@ -9,7 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('web.urls')),  # Incluye las rutas de la app 'web'
 
-    # 👇 sitemap global
+    # 👇 Sitemap
     path(
         "sitemap.xml",
         TemplateView.as_view(
@@ -18,17 +18,21 @@ urlpatterns = [
         ),
         name="sitemap"
     ),
-    path(
-    "robots.txt",
-    TemplateView.as_view(
-        template_name="robots.txt",
-        content_type="text/plain"
-    ),
-    name="robots"
-),
 
+    # 👇 Robots.txt
+    path(
+        "robots.txt",
+        TemplateView.as_view(
+            template_name="robots.txt",
+            content_type="text/plain"
+        ),
+        name="robots"
+    ),
 ]
 
 # Para servir archivos estáticos desde la carpeta assets/ en modo desarrollo
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=os.path.join(settings.BASE_DIR, "assets"))
+    urlpatterns += static(
+        settings.STATIC_URL,
+        document_root=os.path.join(settings.BASE_DIR, "assets")
+    )
