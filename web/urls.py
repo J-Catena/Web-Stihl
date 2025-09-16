@@ -1,20 +1,25 @@
-# web/urls.py
-
-from django.urls import path
+from django.contrib import admin
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 from django.views.generic import TemplateView
-from . import views
+import os
 
 urlpatterns = [
-    # Vistas con lógica
-    path('', views.index, name='index'),
-    path('contacto/', views.contacto, name='contacto'),
+    path('admin/', admin.site.urls),
+    path('', include('web.urls')),  # Incluye las rutas de la app 'web'
 
-    # Productos
-    path('productos/', views.productos, name='productos'),
-    path('categoria/<str:categoria>/', views.categoria, name='categoria'),
-
-    # Vistas estáticas
-    path('aviso-legal/', TemplateView.as_view(template_name='aviso-legal.html'), name='aviso-legal'),
-    path('proteccion-datos/', TemplateView.as_view(template_name='proteccion-de-datos.html'), name='proteccion-datos'),
-    path('politica-cookies/', TemplateView.as_view(template_name='cookies.html'), name='politica-cookies'),
+   
+    path(
+        "sitemap.xml",
+        TemplateView.as_view(
+            template_name="sitemap.xml",
+            content_type="application/xml"
+        ),
+        name="sitemap"
+    ),
 ]
+
+# Para servir archivos estáticos desde la carpeta assets/ en modo desarrollo
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=os.path.join(settings.BASE_DIR, 'assets'))
